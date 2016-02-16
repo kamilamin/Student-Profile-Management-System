@@ -75,12 +75,12 @@ void Student::Search()
 {
 	system("cls");
 
-	cout << "Enter Employee ID number: ";
+	cout << "Enter Student ID number: ";
 	cin >> stdId;
 	string stdId2 = to_string(stdId);
 	stdId2.append(".txt");
 	ifstream student(stdId2);
-	while (student >> fname >> mname >> lname >> stdId >> Enroll >> age >> day >> month  >> Dept)
+	while (student >> fname >> mname >> lname >> stdId >> Enroll >> age >> day >> month  >> year >> Dept)
 	{
 		int mnameLength = mname.size();
 		int lnameLength = lname.size();
@@ -88,7 +88,7 @@ void Student::Search()
 		int TotalLength = fnameLength + mnameLength + lnameLength;
 
 		string answer;
-		cout << "Is this correct Employee[y/n] " << endl;
+		cout << "Is this correct Student[y/n] " << endl;
 		cout << fname << " " << mname << " " << lname << " " << stdId << " " << age << " " << Dept << endl;
 		cin >> answer;
 
@@ -114,7 +114,7 @@ void Student::Search()
 			}
 
 			cout << " " << endl;
-			cout << fname << " " << mname << " " << lname << " " << setw(3) << stdId << setw(3) << " " << Enroll << "      " << age << "    " << day << "-" << month << "-" << year << setw(11) << Dept << endl;
+			cout << fname << " " << mname << " " << lname << "   " << stdId << "     " << Enroll << "      " << age << "      " << day << "-" << month << "-" << year  <<"  "<< Dept << endl;
 		}
 	}
 }
@@ -183,7 +183,7 @@ void Student::Edit()
 void Student::DisplayAll()
 {
 	system("cls");
-	cout << "Entire Employee Database " << endl;
+	cout << "Entire Student Database " << endl;
 	cout << "------------------------ " << endl;
 	ifstream dir("Directory.txt");
 	system("cls");
@@ -216,7 +216,7 @@ void Student::Delete()
 {
 	system("cls");
 	int File;
-	cout << "Enter Employee ID to delete the Data: ";
+	cout << "Enter Student ID to delete the Data: ";
 	cin >> File;
 
 	string empId = to_string(File);
@@ -236,14 +236,14 @@ void Student::Delete()
 int main()
 {
 	system("cls");
-	system("Title Employee Database program");
+	system("Title Student Profile Management System");
 	system("color 03");
 	cout << "\n\t\t\tEnter choices from below: " << endl;
-	cout << "1.Input new Employee " << endl;
-	cout << "2.View an Employee Data by ID number " << endl;
-	cout << "3.Edit an existing Employee Data " << endl;
-	cout << "4.Display all Employee." << endl;
-	cout << "5.Delete an existing Employee Data. " << endl;
+	cout << "1.Input new Student " << endl;
+	cout << "2.View an Student Data by ID number " << endl;
+	cout << "3.Edit an existing Student Data " << endl;
+	cout << "4.Display all Student." << endl;
+	cout << "5.Delete an existing Student Data. " << endl;
 	cout << "6.Exit \n" << endl;
 	Student S;
 	int choice;
@@ -275,5 +275,6 @@ int main()
 	default:
 		break;
 	}
+	system("pause");
+	return 0;
 }
-

@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.5.1:PlatformToolSet=v120:EnableManagedIncrementalBuild=true:VCToolArchitecture=Native32Bit
-Debug|Win32|C:\Users\musha_000\Desktop\ibad\languages\c++\projects\Student-Profile-Management-System\Student-Profile-Management-System\|
+#TargetFrameworkVersion=v4.5.2:PlatformToolSet=v140:EnableManagedIncrementalBuild=true:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+Debug|Win32|E:\project\Student-Profile-Management-System\|
