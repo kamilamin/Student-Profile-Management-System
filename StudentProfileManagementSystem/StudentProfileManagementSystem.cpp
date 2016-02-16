@@ -38,6 +38,7 @@ Student::~Student()
 void Student::Input()
 {
 	system("cls");
+	system("color 08");
 	cout << "Enter Student ID: ";
 	cin >> stdId;
 	cout << "Enter First Name: ";
@@ -74,7 +75,7 @@ void Student::Input()
 void Student::Search()
 {
 	system("cls");
-
+	system("color 06");
 	cout << "Enter Student ID number: ";
 	cin >> stdId;
 	string stdId2 = to_string(stdId);
@@ -183,6 +184,7 @@ void Student::Edit()
 void Student::DisplayAll()
 {
 	system("cls");
+	system("color 03");
 	cout << "Entire Student Database " << endl;
 	cout << "------------------------ " << endl;
 	ifstream dir("Directory.txt");
@@ -215,6 +217,7 @@ void Student::DisplayAll()
 void Student::Delete()
 {
 	system("cls");
+	system("color B");
 	int File;
 	cout << "Enter Student ID to delete the Data: ";
 	cin >> File;
@@ -238,6 +241,11 @@ int main()
 	system("cls");
 	system("Title Student Profile Management System");
 	system("color 03");
+	cout << "\t\t********************************************\n";
+	cout << "\t\t*       WELLCOME TO MEGA SOLUTION          *\n";
+	cout << "\t\t********************************************\n";
+	cout << "\t\t=============================================\n";
+	cout << "\t\t     Student Profile Management System\n";
 	cout << "\n\t\t\tEnter choices from below: " << endl;
 	cout << "1.Input new Student " << endl;
 	cout << "2.View an Student Data by ID number " << endl;
