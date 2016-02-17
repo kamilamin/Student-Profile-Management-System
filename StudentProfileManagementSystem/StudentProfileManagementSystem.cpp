@@ -12,13 +12,13 @@ class Student
 private:
 	string fname;
 	string mname;
-	string lname,address;
+	string lname, address;
 	string filename;
 	char Dept[10];
 	int Enroll;
 	int stdId;
-	short age,day,year,month;
-	
+	short age, day, year, month;
+
 public:
 	Student();
 	~Student();
@@ -28,6 +28,57 @@ public:
 	void DisplayAll();
 	void Delete();
 };
+
+int main()
+{
+	system("cls");
+	system("Title Student Profile Management System");
+	system("color 03");
+	cout << "\t\t********************************************\n";
+	cout << "\t\t*       WELLCOME TO MEGA SOLUTION          *\n";
+	cout << "\t\t********************************************\n";
+	cout << "\t\t=============================================\n";
+	cout << "\t\t     Student Profile Management System\n";
+	cout << "\n\t\t\tEnter choices from below: " << endl;
+	cout << "1.Input new Student " << endl;
+	cout << "2.View an Student Data by ID number " << endl;
+	cout << "3.Edit an existing Student Data " << endl;
+	cout << "4.Display all Student." << endl;
+	cout << "5.Delete an existing Student Data. " << endl;
+	cout << "6.Exit \n" << endl;
+	Student S;
+	int choice;
+	cout << "\tChoice :";
+	cin >> choice;
+	switch (choice)
+	{
+	case 1:
+		S.Input();
+		main();
+		break;
+	case 2:
+		S.Search();
+		getch();
+		main();
+		break;
+	case 3:
+		S.Edit();
+		main();
+		break;
+	case 4:
+		S.DisplayAll();
+		main();
+		break;
+	case 5:
+		S.Delete();
+		main();
+		break;
+	default:
+		break;
+	}
+	system("pause");
+	return 0;
+}
 
 Student::Student()
 {
@@ -81,7 +132,7 @@ void Student::Search()
 	string stdId2 = to_string(stdId);
 	stdId2.append(".txt");
 	ifstream student(stdId2);
-	while (student >> fname >> mname >> lname >> stdId >> Enroll >> age >> day >> month  >> year >> Dept)
+	while (student >> fname >> mname >> lname >> stdId >> Enroll >> age >> day >> month >> year >> Dept)
 	{
 		int mnameLength = mname.size();
 		int lnameLength = lname.size();
@@ -115,7 +166,7 @@ void Student::Search()
 			}
 
 			cout << " " << endl;
-			cout << fname << " " << mname << " " << lname << "   " << stdId << "     " << Enroll << "      " << age << "      " << day << "-" << month << "-" << year  <<"  "<< Dept << endl;
+			cout << fname << " " << mname << " " << lname << "   " << stdId << "     " << Enroll << "      " << age << "      " << day << "-" << month << "-" << year << "  " << Dept << endl;
 		}
 	}
 }
@@ -157,7 +208,7 @@ void Student::Edit()
 			{
 				cout << " ";
 			}
-			
+
 			cout << " ID: ";
 			for (int z = 1; z < 2; z++)
 			{
@@ -169,7 +220,7 @@ void Student::Edit()
 			{
 				cout << "--";
 			}
-		
+
 			cout << " " << endl;
 			cout << fname << " " << mname << " " << lname << " " << setw(3) << stdId << setw(3) << " " << Enroll << "      " << age << "    " << day << "-" << month << "-" << year << Dept << endl;
 		}
@@ -232,57 +283,5 @@ void Student::Delete()
 	{
 		cout << File << " has been removed." << endl;
 		_sleep(5000);
-
 	}
-
-}
-int main()
-{
-	system("cls");
-	system("Title Student Profile Management System");
-	system("color 03");
-	cout << "\t\t********************************************\n";
-	cout << "\t\t*       WELLCOME TO MEGA SOLUTION          *\n";
-	cout << "\t\t********************************************\n";
-	cout << "\t\t=============================================\n";
-	cout << "\t\t     Student Profile Management System\n";
-	cout << "\n\t\t\tEnter choices from below: " << endl;
-	cout << "1.Input new Student " << endl;
-	cout << "2.View an Student Data by ID number " << endl;
-	cout << "3.Edit an existing Student Data " << endl;
-	cout << "4.Display all Student." << endl;
-	cout << "5.Delete an existing Student Data. " << endl;
-	cout << "6.Exit \n" << endl;
-	Student S;
-	int choice;
-	cout << "\tChoice :";
-	cin >> choice;
-	switch (choice)
-	{
-	case 1:
-		S.Input();
-		main();
-		break;
-	case 2:
-		S.Search();
-		getch();
-		main();
-		break;
-	case 3:
-		S.Edit();
-		main();
-		break;
-	case 4:
-		S.DisplayAll();
-		main();
-		break;
-	case 5:
-		S.Delete();
-		main();
-		break;
-	default:
-		break;
-	}
-	system("pause");
-	return 0;
 }
