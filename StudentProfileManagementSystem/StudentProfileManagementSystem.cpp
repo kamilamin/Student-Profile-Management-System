@@ -31,50 +31,105 @@ public:
 
 int main()
 {
+	string d;
 	system("cls");	//clears console screen
 	system("Title Student Profile Management System");
 	system("color 03");	//set color of text in console
-	cout << "\t\t*********************************************\n";
-	cout << "\t\t*       WELLCOME TO MEGA SOLUTIO8N          *\n";
-	cout << "\t\t*********************************************\n";
-	cout << "\t\t=============================================\n";
-	cout << "\t\t     Student Profile Management System\n";
-	cout << "\n\t\t\tEnter choices from below: " << endl;
-	cout << "1.Input new Student " << endl;
-	cout << "2.View an Student Data by ID number " << endl;
-	cout << "3.Edit an existing Student's Data " << endl;
-	cout << "4.Display all Student." << endl;
-	cout << "5.Delete an existing Student's Data. " << endl;
-	cout << "6.Exit \n" << endl;
 	Student S;
-	int choice;
-	cout << "\tChoice :";
-	cin >> choice;
-	switch (choice)
+	cout << "\n\n\n\n\t\t	Enter as User or Admin: ";
+	cin >> d;
+USER:
 	{
-	case 1:
-		S.Input();
-		main();
-		break;
-	case 2:
-		S.Search();
-		getch();
-		main();
-		break;
-	case 3:
-		S.Edit();
-		main();
-		break;
-	case 4:
-		S.DisplayAll();
-		main();
-		break;
-	case 5:
-		S.Delete();
-		main();
-		break;
-	default:
-		break;
+		if (d == "user")// d == "user")
+		{
+			system("cls");
+			cout << "\t\t*********************************************\n";
+			cout << "\t\t*		     WELLCOME USER	*\n";
+			cout << "\t\t*********************************************\n";
+			cout << "\t\t=============================================\n";
+			cout << "\t\t     Student Profile Management System\n";
+			cout << "\n\t\t\tEnter choices from below: " << endl;
+			cout << "1.View an Student Data by ID number " << endl;
+			cout << "2.Edit your existing Data " << endl;
+			cout << "3.Display all Student." << endl;
+			cout << "4.Delete your Personal's Data. " << endl;
+			cout << "5.Exit \n" << endl;
+			int choice;
+			cout << "\tChoice :";
+			cin >> choice;
+			switch (choice)
+			{
+			case 1:
+				S.Search();
+				getch();
+				goto USER;
+				break;
+			case 2:
+				S.Edit();
+				goto USER;
+				break;
+			case 3:
+				S.DisplayAll();
+				goto USER;
+				break;
+			case 4:
+				S.Delete();
+				goto USER;
+				break;
+			default:
+				exit(0);
+				break;
+			}
+		}
+	}
+ADMIN:
+	{
+		if (d == "Admin" || d == "admin")
+		{
+			system("cls");
+			cout << "\t\t*********************************************\n";
+			cout << "\t\t*       WELLCOME TO MEGA SOLUTIO8N          *\n";
+			cout << "\t\t*********************************************\n";
+			cout << "\t\t=============================================\n";
+			cout << "\t\t     Student Profile Management System\n";
+			cout << "\n\t\t\tEnter choices from below: " << endl;
+			cout << "1.Input new Student " << endl;
+			cout << "2.View an Student Data by ID number " << endl;
+			cout << "3.Edit an existing Student's Data " << endl;
+			cout << "4.Display all Student." << endl;
+			cout << "5.Delete an existing Student's Data. " << endl;
+			cout << "6.Exit \n" << endl;
+			int choice;
+			cout << "\tChoice :";
+			cin >> choice;
+			switch (choice)
+			{
+			case 1:
+				S.Input();
+				goto ADMIN;
+				break;
+			case 2:
+				S.Search();
+				getch();
+				goto ADMIN;
+				break;
+			case 3:
+				S.Edit();
+				goto ADMIN;
+				break;
+			case 4:
+				S.DisplayAll();
+				goto ADMIN;
+				break;
+			case 5:
+				S.Delete();
+				goto ADMIN;
+				break;
+			default:
+				exit(0);
+				break;
+			}
+		}
 	}
 	system("pause");
 	return 0;
@@ -82,6 +137,12 @@ int main()
 
 Student::Student()
 {
+	cout << "\t\t*********************************************\n";
+	cout << "\t\t*       WELLCOME TO MEGA SOLUTIO8N          *\n";
+	cout << "\t\t*********************************************\n";
+	cout << "\t\t=============================================\n";
+	cout << "\t\t     Student Profile Management System\n";
+
 }
 Student::~Student()
 {
