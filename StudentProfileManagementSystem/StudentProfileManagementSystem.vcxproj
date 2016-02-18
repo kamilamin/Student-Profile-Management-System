@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{90D3D03F-DE54-44F8-8476-5B06B6A047C5}</ProjectGuid>
+    <ProjectGuid>{77C08BE8-52FF-4E71-8506-F670EB13409A}</ProjectGuid>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>StudentProfileManagementSystem</RootNamespace>
