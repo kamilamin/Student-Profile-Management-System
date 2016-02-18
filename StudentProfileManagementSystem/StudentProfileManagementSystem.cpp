@@ -42,43 +42,62 @@ USER:
 	{
 		if (d == "user")// d == "user")
 		{
-			system("cls");
-			cout << "\t\t*********************************************\n";
-			cout << "\t\t*		     WELLCOME USER	*\n";
-			cout << "\t\t*********************************************\n";
-			cout << "\t\t=============================================\n";
-			cout << "\t\t     Student Profile Management System\n";
-			cout << "\n\t\t\tEnter choices from below: " << endl;
-			cout << "1.View an Student Data by ID number " << endl;
-			cout << "2.Edit your existing Data " << endl;
-			cout << "3.Display all Student." << endl;
-			cout << "4.Delete your Personal's Data. " << endl;
-			cout << "5.Exit \n" << endl;
-			int choice;
-			cout << "\tChoice :";
-			cin >> choice;
-			switch (choice)
+			int ID;
+			cout << "\t\t\tEnter Your ID number: ";
+			cin >> ID;
+			string id = to_string(ID);
+			id.append(".txt");
+			ifstream open(id);
+			if (open.is_open())
 			{
-			case 1:
-				S.Search();
+				system("cls");
+				cout << "\t\t*********************************************\n";
+				cout << "\t\t*		     WELLCOME USER	*\n";
+				cout << "\t\t*********************************************\n";
+				cout << "\t\t=============================================\n";
+				cout << "\t\t     Student Profile Management System\n";
+				cout << "\n\t\t\tEnter choices from below: " << endl;
+				cout << "1.View an Student Data by ID number " << endl;
+				cout << "2.Edit your existing Data " << endl;
+				cout << "3.Display all Student." << endl;
+				cout << "4.Delete your Personal's Data. " << endl;
+				cout << "5.Logout " << endl;
+				cout << "6.Exit \n" << endl;
+				int choice;
+				cout << "\tChoice :";
+				cin >> choice;
+				switch (choice)
+				{
+				case 1:
+					S.Search();
+					getch();
+					goto USER;
+					break;
+				case 2:
+					S.Edit();
+					goto USER;
+					break;
+				case 3:
+					S.DisplayAll();
+					goto USER;
+					break;
+				case 4:
+					S.Delete();
+					goto USER;
+					break;
+				case 5:
+					main();
+					break;
+				default:
+					exit(0);
+					break;
+				}
+			}
+			else
+			{
+				cout << "\n\t\t\tYour are not registered.\n\t\t\tPlease contact the Admin\n";
 				getch();
-				goto USER;
-				break;
-			case 2:
-				S.Edit();
-				goto USER;
-				break;
-			case 3:
-				S.DisplayAll();
-				goto USER;
-				break;
-			case 4:
-				S.Delete();
-				goto USER;
-				break;
-			default:
-				exit(0);
-				break;
+				main();
 			}
 		}
 	}
@@ -98,7 +117,8 @@ ADMIN:
 			cout << "3.Edit an existing Student's Data " << endl;
 			cout << "4.Display all Student." << endl;
 			cout << "5.Delete an existing Student's Data. " << endl;
-			cout << "6.Exit \n" << endl;
+			cout << "6.Logout " << endl;
+			cout << "7.Exit\n" << endl;
 			int choice;
 			cout << "\tChoice :";
 			cin >> choice;
@@ -125,6 +145,9 @@ ADMIN:
 				S.Delete();
 				goto ADMIN;
 				break;
+			case 6:
+				main();
+				break;
 			default:
 				exit(0);
 				break;
@@ -132,7 +155,6 @@ ADMIN:
 		}
 	}
 	system("pause");
-	return 0;
 }
 
 Student::Student()
